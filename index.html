@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>练器</title>
+
+    <link href="style/main.css" rel="stylesheet" type="text/css">
+    <link href="style/ai.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport"
+          content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+<div class="container">
+    <div class="heading">
+        <h1 class="title">魔改 2048</h1>
+        <div class="score-container">0</div>
+    </div>
+
+    <div class="controls">
+        <div id="hint-button-container">
+            <button id="hint-button" class="ai-button">下一步</button>
+        </div>
+        <div id="feedback-container"></div>
+        <div id="run-button-container">
+            <input type="checkbox" id="auto-move" class="ai-button">自动移动</button>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <div class="game-message">
+            <p></p>
+            <div class="lower">
+                <a class="retry-button">Try again</a>
+                <div class="score-sharing"></div>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-row">
+                <div class="grid-cell" x="0" y="0"></div>
+                <div class="grid-cell" x="1" y="0"></div>
+                <div class="grid-cell" x="2" y="0"></div>
+                <div class="grid-cell" x="3" y="0"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell" x="0" y="1"></div>
+                <div class="grid-cell" x="1" y="1"></div>
+                <div class="grid-cell" x="2" y="1"></div>
+                <div class="grid-cell" x="3" y="1"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell" x="0" y="2"></div>
+                <div class="grid-cell" x="1" y="2"></div>
+                <div class="grid-cell" x="2" y="2"></div>
+                <div class="grid-cell" x="3" y="2"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell" x="0" y="3"></div>
+                <div class="grid-cell" x="1" y="3"></div>
+                <div class="grid-cell" x="2" y="3"></div>
+                <div class="grid-cell" x="3" y="3"></div>
+            </div>
+        </div>
+
+        <div class="tile-container">
+
+        </div>
+    </div>
+
+    <p class="game-explanation">
+        <strong class="important">用法:</strong>
+    <hr/>
+    <p style="line-height: 200%;">
+        1. 双击格子输入对应等级，输入0清空格子，输完点空白的地方
+        <br/>
+        2. 点下一步，会显示尖头指向最佳移动方向，按键盘 ⬆️⬇️⬅️➡️ 进行相应移动，或勾上自动移动
+        <br/>
+        3. 临时改的，没细看源代码，不一定对，先凑活用后面再改
+    </p>
+    <hr/>
+    AI solver by <a href="https://github.com/ovolve/2048-AI">Matt Overlan</a>
+    </p>
+</div>
+
+<script src="js/animframe_polyfill.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/keyboard_input_manager.js"></script>
+<script src="js/html_actuator.js"></script>
+<script src="js/grid.js"></script>
+<script src="js/tile.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/game_manager.js"></script>
+<script src="js/application.js"></script>
+</body>
+</html>
